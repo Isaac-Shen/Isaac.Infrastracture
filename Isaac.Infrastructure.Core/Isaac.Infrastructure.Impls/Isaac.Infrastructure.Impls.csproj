@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Class1.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="MessageQueues\" />
+    <Folder Include="Caches\" />
+    <Folder Include="Sms\" />
+    <Folder Include="Ioc\" />
+    <Folder Include="Aop\" />
+    <Folder Include="Compress\" />
+    <Folder Include="Ecryptions\" />
+    <Folder Include="Emails\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AspectCore.Core" Version="0.3.1" />
+    <PackageReference Include="AspectCore.Extensions.Autofac" Version="0.3.1" />
+    <PackageReference Include="AspectCore.Extensions.DependencyInjection" Version="0.3.1" />
+    <PackageReference Include="Autofac" Version="4.8.0" />
+    <PackageReference Include="Castle.Core" Version="4.2.1" />
+    <PackageReference Include="Dapper" Version="1.50.4" />
+    <PackageReference Include="ServiceStack.RabbitMq.Core" Version="5.0.2" />
+    <PackageReference Include="ServiceStack.Redis.Core" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Isaac.Infrastructure.Common\Isaac.Infrastructure.Common.csproj" />
+    <ProjectReference Include="..\Isaac.Infrastructure.Interfaces\Isaac.Infrastructure.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>

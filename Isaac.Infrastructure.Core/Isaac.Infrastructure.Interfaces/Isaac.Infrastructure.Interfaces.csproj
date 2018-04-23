@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Utils\新文件夹\**" />
+    <EmbeddedResource Remove="Utils\新文件夹\**" />
+    <None Remove="Utils\新文件夹\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Class1.cs" />
+    <Compile Remove="Utils\ISMS.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Patterns\Aop\" />
+    <Folder Include="Utils\Sms\" />
+    <Folder Include="Utils\MessageQueues\" />
+    <Folder Include="Utils\Compress\" />
+    <Folder Include="Utils\Encryptions\" />
+    <Folder Include="Utils\Emails\" />
+  </ItemGroup>
+
+</Project>
