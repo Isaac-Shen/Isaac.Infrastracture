@@ -10,7 +10,7 @@ namespace Isaac.Infrastructure.Framework.Utils
     {
         string GetStrValue(string key);
 
-        List<string> GetStrValues(params string[] keys);
+        IEnumerable<string> GetStrValues(params string[] keys);
 
         void SetStrValue(string key, string value);
 
