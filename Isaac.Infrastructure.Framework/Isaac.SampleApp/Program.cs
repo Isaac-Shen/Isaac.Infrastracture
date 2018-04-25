@@ -12,7 +12,7 @@ namespace Isaac.SampleApp
     {
         static void Main(string[] args)
         {
-            RedisManager.Initialize("localhost:6379");
+            RedisManager.Initialize("localhost:6379,name=Isaac");
 
             var connect = new RedisString();
 
