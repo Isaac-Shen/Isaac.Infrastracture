@@ -61,7 +61,7 @@ namespace Isaac.App.Framework.Utils.Caches.Redis
 
         public static void CreateConnection()
         {
-            connection = ConnectionMultiplexer.Connect(connectionString);】
+            connection = ConnectionMultiplexer.Connect(connectionString);
             connection.PreserveAsyncOrder = false;
         }
     }
