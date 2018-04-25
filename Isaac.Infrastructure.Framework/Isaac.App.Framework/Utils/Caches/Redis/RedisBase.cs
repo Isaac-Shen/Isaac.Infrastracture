@@ -11,7 +11,6 @@ namespace Isaac.App.Framework.Utils.Caches.Redis
 {
     public abstract class RedisBase : IRedisCache
     {
-
         protected int _currentDatabase = -1;
         protected object _currentAsyncState = null;
 
@@ -73,13 +72,22 @@ namespace Isaac.App.Framework.Utils.Caches.Redis
 
         public virtual void SetValue(string key, object value)
         {
-            Core.SetAdd(key, JsonConvert.SerializeObject(value));
+            Core.StringSet(key, JsonConvert.SerializeObject(value));
         }
 
         public virtual void SetValue(string key, object value, TimeSpan expireSpan)
         {
-            Core.SetAdd(key, JsonConvert.SerializeObject(value));
+            Core.StringSet(key, JsonConvert.SerializeObject(value), expireSpan);
+        }
+
+        public void SetExpireSpan(string key, TimeSpan expireSpan)
+        {
             Core.KeyExpire(key, expireSpan);
+        }
+
+        public void RemoveExpireSpan(string key)
+        {
+            Core.KeyPersist(key);
         }
     }
 }

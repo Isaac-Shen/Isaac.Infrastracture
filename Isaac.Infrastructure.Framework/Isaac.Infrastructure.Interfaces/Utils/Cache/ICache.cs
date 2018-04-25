@@ -12,11 +12,13 @@ namespace Isaac.Infrastructure.Framework.Utils
     /// </summary>
     public interface ICache
     {
-        bool ContainsKey(string Key);
-        T GetValue<T>(string Key);
-        void SetValue(string Key, object Value);
-        void SetValue(string Key, object Value, TimeSpan ExpireSpan);
-        void RemoveKey(string Key);
+        bool ContainsKey(string key);
+        T GetValue<T>(string key);
+        void SetValue(string key, object value);
+        void SetValue(string key, object value, TimeSpan expireSpan);
+        void SetExpireSpan(string key, TimeSpan expireSpan);
+        void RemoveExpireSpan(string key);
+        void RemoveKey(string key);
         void Save();
         Task SaveAsync();
     }

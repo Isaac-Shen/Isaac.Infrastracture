@@ -8,16 +8,16 @@ namespace Isaac.Infrastructure.Framework.Utils
 {
     public interface IRdsString
     {
-        string GetStrValue(string Key);
+        string GetStrValue(string key);
 
-        IEnumerable<string> GetStrValues(IEnumerable<string> keys);
+        List<string> GetStrValues(params string[] keys);
 
-        void SetStrValue(string Key, string Value);
+        void SetStrValue(string key, string value);
 
-        void SetStrValue(string Key, string Value, TimeSpan ExpireSpan);
+        void SetStrValue(string key, string value, TimeSpan expireSpan);
 
-        void AppendStrValue(string key, string Value);
+        void AppendStrValue(string key, string value);
 
-        void PrependStrValue(string key, string Value);
+        void PrependStrValue(string key, string value);
     }
 }
