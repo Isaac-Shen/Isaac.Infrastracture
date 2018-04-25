@@ -27,7 +27,7 @@ namespace Isaac.App.Framework.Utils.Caches.Redis
         /// <returns>字符串键值</returns>
         public string GetStrValue(string key)
         {
-            return this.GetValue<string>(key);
+            return Core.StringGet(key);
         }
 
         /// <summary>
