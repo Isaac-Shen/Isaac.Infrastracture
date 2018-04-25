@@ -9,6 +9,9 @@ using Newtonsoft.Json;
 
 namespace Isaac.App.Framework.Utils.Caches.Redis
 {
+    /// <summary>
+    /// 还需要考虑到集群与物理的差距
+    /// </summary>
     public abstract class RedisBase : IRedisCache
     {
         protected int _currentDatabase = -1;
@@ -72,22 +75,22 @@ namespace Isaac.App.Framework.Utils.Caches.Redis
 
         public virtual void SetValue(string key, object value)
         {
-            Core.StringSet(key, JsonConvert.SerializeObject(value));
+            Core.StringSet(key, JsonConvert.SerializeObject(value), null, When.Always, CommandFlags.FireAndForget);
         }
 
         public virtual void SetValue(string key, object value, TimeSpan expireSpan)
         {
-            Core.StringSet(key, JsonConvert.SerializeObject(value), expireSpan);
+            Core.StringSet(key, JsonConvert.SerializeObject(value), expireSpan, When.Always, CommandFlags.FireAndForget);
         }
 
         public void SetExpireSpan(string key, TimeSpan expireSpan)
         {
-            Core.KeyExpire(key, expireSpan);
+            Core.KeyExpire(key, expireSpan, CommandFlags.FireAndForget);
         }
 
         public void RemoveExpireSpan(string key)
         {
-            Core.KeyPersist(key);
+            Core.KeyPersist(key, CommandFlags.FireAndForget);
         }
     }
 }
