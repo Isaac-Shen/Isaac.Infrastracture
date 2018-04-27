@@ -51,21 +51,9 @@ namespace Isaac.App.Framework.Utils.Caches.Redis
             Core.ListRightPush(key, JsonConvert.SerializeObject(value));
         }
 
-        public void Enqueue(string key, object value, TimeSpan expireSpan)
-        {
-            this.Enqueue(key, value);
-            this.SetExpireSpan(key, expireSpan);
-        }
-
         public void EnqueueInverse(string key, object value)
         {
             Core.ListLeftPush(key, JsonConvert.SerializeObject(value));
-        }
-
-        public void EnqueueInverse(string key, object value, TimeSpan expireSpan)
-        {
-            this.EnqueueInverse(key, value);
-            this.SetExpireSpan(key, expireSpan);
         }
 
         public long Length(string key)

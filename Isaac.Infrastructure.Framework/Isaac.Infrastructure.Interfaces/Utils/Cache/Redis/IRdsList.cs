@@ -9,13 +9,9 @@ namespace Isaac.Infrastructure.Framework.Utils
     public interface IRdsList
     {
         void Enqueue(string key, object value);
-
-        void Enqueue(string key, object value, TimeSpan expireSpan);
-
+        
         void EnqueueInverse(string key, object value);
-
-        void EnqueueInverse(string key, object value, TimeSpan expireSpan);
-
+        
         string Dequeue(string key);
 
         string DequeueInverse(string key);
