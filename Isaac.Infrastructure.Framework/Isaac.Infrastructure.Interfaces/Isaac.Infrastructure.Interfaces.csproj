@@ -40,15 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataService\AbstractDataService.cs" />
+    <Compile Include="DataService\IDataService.cs" />
     <Compile Include="Patterns\GlobalHandle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utils\AbstractLogger.cs" />
+    <Compile Include="Utils\Logger\AbstractLogger.cs" />
     <Compile Include="Utils\Cache\ICache.cs" />
     <Compile Include="Utils\Cache\Redis\IRdsList.cs" />
     <Compile Include="Utils\Cache\Redis\IRdsSet.cs" />
     <Compile Include="Utils\Cache\Redis\IRdsString.cs" />
     <Compile Include="Utils\Cache\Redis\IRdsSortedSet.cs" />
-    <Compile Include="Utils\ILog.cs" />
+    <Compile Include="Utils\Logger\ILog.cs" />
     <Compile Include="Utils\Cache\Redis\IRedisCache.cs" />
   </ItemGroup>
   <ItemGroup />
