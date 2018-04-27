@@ -18,8 +18,6 @@ namespace Isaac.Infrastructure.Framework.Utils
 
         bool Contains(string key, object value);
 
-        string RandomElement(string key);
-
         string Pop(string key);
 
         long Length(string key);

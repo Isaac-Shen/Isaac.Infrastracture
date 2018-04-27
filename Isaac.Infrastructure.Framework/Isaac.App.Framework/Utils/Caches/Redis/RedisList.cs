@@ -30,21 +30,13 @@ namespace Isaac.App.Framework.Utils.Caches.Redis
 
         public string DequeueInverse(string key)
         {
-            var value = Core.ListRightPop(key);
-            if (value.HasValue)
-            {
-                return value.ToString();
-            }
-            else
-            {
-                return null;
-            }
+            return DequeueInverse<string>(key);
         }
 
         public T DequeueInverse<T>(string key)
         {
-            var value = this.DequeueInverse(key);
-            if (!string.IsNullOrEmpty(value))
+            var value = Core.ListRightPop(key);
+            if (value.HasValue && !string.IsNullOrEmpty(value))
             {
                 return JsonConvert.DeserializeObject<T>(value.ToString());
             }
@@ -83,21 +75,13 @@ namespace Isaac.App.Framework.Utils.Caches.Redis
 
         public string Get(string key, long index)
         {
-            var result = Core.ListGetByIndex(key, index);
-            if (result.HasValue)
-            {
-                return result.ToString();
-            }
-            else
-            {
-                return null;
-            }
+            return Get<string>(key, index);
         }
 
-        public T Get<T>(string key, int index)
+        public T Get<T>(string key, long index)
         {
-            var result = Get(key, index);
-            if (string.IsNullOrEmpty(result))
+            var result = Core.ListGetByIndex(key, index);
+            if (result.HasValue && string.IsNullOrEmpty(result))
             {
                 return JsonConvert.DeserializeObject<T>(result);
             }

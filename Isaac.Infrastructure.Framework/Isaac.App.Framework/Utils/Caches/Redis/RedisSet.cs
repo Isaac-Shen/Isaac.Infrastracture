@@ -60,9 +60,19 @@ namespace Isaac.App.Framework.Utils.Caches.Redis
             return Combine(StackExchange.Redis.SetOperation.Difference, firstKey, secondKey);
         }
 
+        public IEnumerable<T> CombineDifference<T>(string firstKey, string secondKey)
+        {
+            return Combine<T>(StackExchange.Redis.SetOperation.Difference, firstKey, secondKey);
+        }
+
         public IEnumerable<string> CombineIntersect(string firstKey, string secondKey)
         {
             return Combine(StackExchange.Redis.SetOperation.Intersect, firstKey, secondKey);
+        }
+
+        public IEnumerable<T> CombineIntersect<T>(string firstKey, string secondKey)
+        {
+            return Combine<T>(StackExchange.Redis.SetOperation.Intersect, firstKey, secondKey);
         }
 
         public IEnumerable<string> CombineUnion(string firstKey, string secondKey)
@@ -70,12 +80,17 @@ namespace Isaac.App.Framework.Utils.Caches.Redis
             return Combine(StackExchange.Redis.SetOperation.Union, firstKey, secondKey);
         }
 
-        private IEnumerable<string> Combine(StackExchange.Redis.SetOperation setOperation, string firstKey, string secondKey)
+        public IEnumerable<T> CombineUnion<T>(string firstKey, string secondKey)
+        {
+            return Combine<T>(StackExchange.Redis.SetOperation.Union, firstKey, secondKey);
+        }
+
+        protected virtual IEnumerable<string> Combine(StackExchange.Redis.SetOperation setOperation, string firstKey, string secondKey)
         {
             return Combine<string>(setOperation, firstKey, secondKey);
         }
 
-        private IEnumerable<T> Combine<T>(StackExchange.Redis.SetOperation setOperation, string firstKey, string secondKey)
+        protected virtual IEnumerable<T> Combine<T>(StackExchange.Redis.SetOperation setOperation, string firstKey, string secondKey)
         {
             var results = Core.SetCombine(setOperation, firstKey, secondKey);
 
@@ -115,22 +130,31 @@ namespace Isaac.App.Framework.Utils.Caches.Redis
 
         public void Move(string srcKey, string destKey, object value)
         {
-            throw new NotImplementedException();
+            Core.SetMove(srcKey, destKey, JsonConvert.SerializeObject(value));
         }
 
         public string Pop(string key)
         {
-            throw new NotImplementedException();
+            return Pop<string>(key);
         }
 
-        public string RandomElement(string key)
+        public T Pop<T>(string key)
         {
-            throw new NotImplementedException();
+            var result = Core.SetPop(key);
+
+            if (result.HasValue && string.IsNullOrEmpty(result))
+            {
+                return JsonConvert.DeserializeObject<T>(result.ToString());
+            }
+            else
+            {
+                return default(T);
+            }
         }
 
         public void Remove(string key, object value)
         {
-            throw new NotImplementedException();
+            Core.SetRemove(key, JsonConvert.SerializeObject(value));
         }
     }
 }
