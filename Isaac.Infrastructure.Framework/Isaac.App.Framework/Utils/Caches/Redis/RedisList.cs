@@ -12,21 +12,13 @@ namespace Isaac.App.Framework.Utils.Caches.Redis
     {
         public string Dequeue(string key)
         {
-            var value = Core.ListLeftPop(key);
-            if (value.HasValue)
-            {
-                return value.ToString();
-            }
-            else
-            {
-                return null;
-            }
+            return Dequeue<string>(key);
         }
 
         public T Dequeue<T>(string key)
         {
-            var value = this.Dequeue(key);
-            if (!string.IsNullOrEmpty(value))
+            var value = Core.ListLeftPop(key);
+            if (value.HasValue && !string.IsNullOrEmpty(value))
             {
                 return JsonConvert.DeserializeObject<T>(value.ToString());
             }
