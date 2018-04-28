@@ -19,6 +19,11 @@ namespace Isaac.App.Framework.Patterns.Ioc
             return new ContainerBuilder();
         }
 
+        /// <summary>
+        /// 需要对Mvc5的升级支持
+        /// </summary>
+        /// <param name="builder"></param>
+        /// <returns></returns>
         public static ILifetimeScope GetContainer(ContainerBuilder builder)
         {
             IContainer container = builder.Build();
