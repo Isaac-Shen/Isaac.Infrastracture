@@ -40,7 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataService\AbstractDataService.cs" />
     <Compile Include="DataService\IDataService.cs" />
     <Compile Include="Patterns\GlobalHandle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
