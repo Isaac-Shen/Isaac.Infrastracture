@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isaac.SteamRemote", "Isaac.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isaac.SampleMvc", "Isaac.SampleMvc\Isaac.SampleMvc.csproj", "{1DE9A579-9C4D-44DE-8F6B-41ED07CB4AF3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{64A3A019-7787-4C32-9E3C-ADB11908CEB8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
