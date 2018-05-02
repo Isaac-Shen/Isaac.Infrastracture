@@ -1,5 +1,4 @@
-﻿using Isaac.SampleMvc.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,33 +8,23 @@ namespace Isaac.SampleMvc.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Home
-        public ViewResult Index()
+        public ActionResult Index()
         {
             return View();
         }
 
-        public ViewResult StrongTypeLink()
+        public ActionResult About()
         {
+            ViewBag.Message = "Your application description page.";
+
             return View();
         }
 
-        [HttpPost]
-        public ViewResult StrongTypeLink(StrongTypeLinkSample sample)
+        public ActionResult Contact()
         {
-            if (ModelState.IsValid)
-            {
-                return View("Thanks", sample);
-            }
-            else
-            {
-                return View();
-            }
-        }
+            ViewBag.Message = "Your contact page.";
 
-        //public ActionResult Thanks(StrongTypeLinkSample sample)
-        //{
-        //    return View(sample);
-        //}
+            return View();
+        }
     }
 }
