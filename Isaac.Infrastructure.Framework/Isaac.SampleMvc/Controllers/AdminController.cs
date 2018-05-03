@@ -1,4 +1,6 @@
 ﻿using Autofac;
+using Isaac.App.Framework.Utils.Logs;
+using Isaac.Infrastructure.Framework.Patterns;
 using Isaac.Infrastructure.Framework.Utils;
 using Isaac.SampleMvc.Dtos;
 using Newtonsoft.Json;
@@ -78,5 +80,6 @@ namespace Isaac.SampleMvc.Controllers
         }
 
         protected ILog _logger;
+        protected ILifetimeScope _container = GlobalHandle<ILifetimeScope>.GetCurrentRef();
     }
 }

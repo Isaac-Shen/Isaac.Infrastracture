@@ -1,0 +1,15 @@
+﻿{
+  "components": [
+    {
+      "type": "Isaac.App.Framework.Utils.Logs.L4nLogger",
+      "services": [
+        {
+          "type": "Isaac.Infrastructure.Framework.Utils.ILog"
+        }
+      ],
+      "autoActivate": true,
+      "injectProperties": true,
+      "instanceScope": "per-dependency"
+    }
+  ]
+}
