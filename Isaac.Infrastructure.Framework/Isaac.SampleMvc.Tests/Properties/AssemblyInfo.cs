@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息是通过以下项进行控制的
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("Isaac.SampleMvc")]
+[assembly: AssemblyTitle("Isaac.SampleMvc.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Isaac.SampleMvc")]
+[assembly: AssemblyProduct("Isaac.SampleMvc.Tests")]
 [assembly: AssemblyCopyright("版权所有(C)  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于 typelib 的 ID
-[assembly: Guid("c89e9e10-2664-481d-82fe-c9cf37800fe3")]
+[assembly: Guid("350a5814-8bc3-47d2-a930-c47085fe1677")]
 
 // 程序集的版本信息由下列四个值组成:
 //
