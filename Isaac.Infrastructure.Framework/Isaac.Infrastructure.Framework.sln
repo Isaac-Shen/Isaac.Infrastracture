@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isaac.SampleMvc.Tests", "Is
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isaac.SampleMvc.Models", "Isaac.SampleMvc.Models\Isaac.SampleMvc.Models.csproj", "{0766B1EE-A186-47C3-BEFB-63088B6818ED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isaac.SampleMvc.Dtos", "Isaac.SampleMvc.Dtos\Isaac.SampleMvc.Dtos.csproj", "{98185E05-4B67-422C-9FE1-551A128768DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{0766B1EE-A186-47C3-BEFB-63088B6818ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0766B1EE-A186-47C3-BEFB-63088B6818ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0766B1EE-A186-47C3-BEFB-63088B6818ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98185E05-4B67-422C-9FE1-551A128768DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98185E05-4B67-422C-9FE1-551A128768DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98185E05-4B67-422C-9FE1-551A128768DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98185E05-4B67-422C-9FE1-551A128768DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +88,7 @@ Global
 		{096536DB-9018-4B6D-A361-AFF7D80CB840} = {5E94EB2E-FC27-4A1C-A2F7-EDB804EC73B3}
 		{A4E87D7E-503A-497A-85D5-5CB59589344B} = {64A3A019-7787-4C32-9E3C-ADB11908CEB8}
 		{0766B1EE-A186-47C3-BEFB-63088B6818ED} = {62309C33-6F3B-4CB8-9D60-5FAAFF8D9DB9}
+		{98185E05-4B67-422C-9FE1-551A128768DD} = {5280B3D2-7934-43F3-BB03-E308D46EB80E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5044D659-3324-431D-97BE-26BF4EF270CD}

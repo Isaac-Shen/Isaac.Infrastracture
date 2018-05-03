@@ -1,0 +1,21 @@
+﻿@model Isaac.SampleMvc.Models.WorkReport
+
+@{
+    ViewBag.Title = "创建新报告";
+}
+
+<div class="container" style="margin-top:1rem">
+    <h3>
+        创建新报告
+        <small>@DateTime.Now.ToString("yyyy-MM-dd")</small>
+    </h3>
+    <hr />
+    <div id="reportArea">
+    </div>
+    <div class="text-center">
+        <a class="btn btn-outline-primary">
+            <i class="fa fa-upload"></i>
+        </a>
+    </div>
+</div>
+

@@ -17,7 +17,7 @@ namespace Isaac.SampleMvc.Models
         public int Id { get; set; }
 
         /// <summary>
-        /// 宿主
+        /// 宿主文章编号
         /// </summary>
         public int BelongTo { get; set; }
 

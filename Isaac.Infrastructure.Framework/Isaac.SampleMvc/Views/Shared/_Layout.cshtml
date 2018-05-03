@@ -9,9 +9,9 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top rounded-bottom">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Isaac's OA</a>
+            <a class="navbar-brand" href="/home/index">Isaac's OA</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#functionNav" aria-controls="functionNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -28,17 +28,25 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="report-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">报告</a>
                         <div class="dropdown-menu" aria-labelledby="report-dropdown">
-                            <a class="dropdown-item" href="#">提交报告</a>
-                            <a class="dropdown-item" href="#">我的报告</a>
-                            <a class="dropdown-item" href="#">我的回复</a>
-                            <a class="dropdown-item" href="#">发现报告</a>
+                            <a class="dropdown-item" href="/workreport/newreport">提交报告</a>
+                            <a class="dropdown-item" href="/workreport/myreport">我的报告</a>
+                            <a class="dropdown-item" href="/workreport/myunreplyreport">待批报告</a>
+                            <a class="dropdown-item" href="/workreport/myreply">我的回复</a>
+                            <a class="dropdown-item" href="/workreport/morereport">发现报告</a>
                         </div>
-                    </li> 
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="mgr-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">管理</a>
                         <div class="dropdown-menu" aria-labelledby="mgr-dropdown">
                             <a class="dropdown-item" href="#">通知管理</a>
                             <a class="dropdown-item" href="#">权限管理</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="about-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">关于</a>
+                        <div class="dropdown-menu" aria-labelledby="about-dropdown">
+                            <a class="dropdown-item" href="/home/about">关于我们</a>
+                            <a class="dropdown-item" href="/home/contact">联系我们</a>
                         </div>
                     </li>
                 </ul>

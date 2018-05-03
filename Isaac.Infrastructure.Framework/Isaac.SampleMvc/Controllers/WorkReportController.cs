@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Isaac.Infrastructure.Framework.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,13 +7,21 @@ using System.Web.Mvc;
 
 namespace Isaac.SampleMvc.Controllers
 {
-    public class WorkReportController : Controller
+    /// <summary>
+    /// 工作日报
+    /// </summary>
+    public class WorkReportController : AdminController
     {
+        public WorkReportController(ILog logger)
+            : base(logger)
+        {
+        }
+
         /// <summary>
         /// 不使用模板写报告
         /// </summary>
         /// <returns></returns>
-        public ViewResult WriteReport()
+        public ViewResult NewReport()
         {
             return View();
         }
@@ -20,9 +29,10 @@ namespace Isaac.SampleMvc.Controllers
         /// <summary>
         /// 使用模板写报告
         /// </summary>
-        /// <param name="templateId"></param>
+        /// <param name="templateId">模板编号</param>
         /// <returns></returns>
-        public ViewResult WriteReport(string templateId)
+        [HttpPost]
+        public ViewResult NewReport(string templateId)
         {
             return View();
         }
@@ -30,12 +40,10 @@ namespace Isaac.SampleMvc.Controllers
         /// <summary>
         /// 指定人员的报告列表
         /// </summary>
-        /// <param name="workId">工号集合</param>
         /// <param name="pageNum">第几页</param>
         /// <param name="pageLoads">每页承载数量</param>
         /// <returns></returns>
-        [HttpPost]
-        public ViewResult ReportList(int workId, int pageNum, int pageLoads)
+        public ViewResult MyReportList(int pageNum, int pageLoads)
         {
             return View();
         }
@@ -51,13 +59,24 @@ namespace Isaac.SampleMvc.Controllers
         }
 
         /// <summary>
+        /// 待恢复报告
+        /// </summary>
+        /// <param name="pageNum">第几页</param>
+        /// <param name="pageLoads">每页承载数量</param>
+        /// <returns></returns>
+        public ViewResult MyUnreplyReport(int pageNum, int pageLoads)
+        {
+            return View();
+        }
+
+        /// <summary>
         /// 回复列表
         /// </summary>
         /// <param name="workId">工号</param>
         /// <param name="pageNum">第几页</param>
         /// <param name="pageLoads">每页承载量</param>
         /// <returns></returns>
-        public ViewResult ReplyList(int workId, int pageNum, int pageLoads)
+        public ViewResult MyReplyList(int pageNum, int pageLoads)
         {
             return View();
         }

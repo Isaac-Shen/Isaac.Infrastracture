@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace Isaac.SampleMvc.Controllers
 {
-    public class NotificationController : Controller
+    public class LoginController : Controller
     {
-        // GET: Notification
-        public ActionResult Index()
+        // GET: Login
+        public ActionResult Login(string userName, string password)
         {
             return View();
         }

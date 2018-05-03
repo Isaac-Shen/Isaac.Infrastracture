@@ -38,7 +38,7 @@ namespace Isaac.Infrastructure.Framework.Patterns
         /// <param name="refered">被引用</param>
         public static void Initialize(T refered)
         {
-            if (refered != null)
+            if (refered == null)
                 throw new ArgumentNullException("Refered");
 
             lock (_sychro)
