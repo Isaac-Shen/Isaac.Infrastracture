@@ -72,7 +72,6 @@ namespace Isaac.SampleMvc.Controllers
         /// <summary>
         /// 回复列表
         /// </summary>
-        /// <param name="workId">工号</param>
         /// <param name="pageNum">第几页</param>
         /// <param name="pageLoads">每页承载量</param>
         /// <returns></returns>
