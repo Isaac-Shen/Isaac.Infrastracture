@@ -41,12 +41,9 @@ namespace Isaac.SampleMvc
             var container = builder
                 .LoadCustomModule(InfrastructureConfig.IOC_CONFIG_FILE_LOCATION)
                 .LoadMvcController(Assembly.GetExecutingAssembly())
-                .Build();
-
-            // Service locator模式暂不启用
-            container
+                .Build()
+                .SetServiceLocator()
                 .SetDependencyResolver()
-                //.SetServiceLocator()
                 .GlobalInitialize();
 
             container.Resolve<ILog>().Information("The application has been successfully started!");
