@@ -33,9 +33,11 @@ namespace Isaac.SampleMvc
 
             BundleTable.EnableOptimizations = ConfigHelper.BUNDLE_OPTIMIZATIONS;
 
-            var container = new ContainerBuilder()
+            var builder = new ContainerBuilder();
+
+            var container = builder
                 .LoadCustomModule(ConfigHelper.IOC_CONFIG_FILE_LOCATION)
-                .LoadMvcController()
+                .LoadMvcController(Assembly.GetExecutingAssembly())
                 .Build()
                 .SetServiceLocator()
                 .SetDependencyResolver()
