@@ -2,7 +2,6 @@
 using Autofac.Extras.CommonServiceLocator;
 using Autofac.Integration.Mvc;
 using Isaac.Infrastructure.Framework.Patterns;
-using Microsoft.Practices.ServiceLocation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
