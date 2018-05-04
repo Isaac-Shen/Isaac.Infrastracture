@@ -51,6 +51,7 @@ namespace Isaac.App.Framework.Patterns.Ioc
         /// 加载Mvc控制器
         /// </summary>
         /// <param name="builder">容器构造器</param>
+        /// <param name="assembly">待加载程序集</param>
         /// <returns>容器构造器</returns>
         public static ContainerBuilder LoadMvcController(this ContainerBuilder builder, Assembly assembly)
         {

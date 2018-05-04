@@ -35,11 +35,12 @@ namespace Isaac.SampleMvc
 
             var builder = new ContainerBuilder();
 
+            // Service locator模式暂不启用
             var container = builder
                 .LoadCustomModule(ConfigHelper.IOC_CONFIG_FILE_LOCATION)
                 .LoadMvcController(Assembly.GetExecutingAssembly())
                 .Build()
-                .SetServiceLocator()
+                //.SetServiceLocator()
                 .SetDependencyResolver()
                 .GlobalInitialize();
 
