@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Isaac.App.Framework.Config
 {
-    public class ConfigHelper
+    public class InfrastructureConfig
     {
         private static string IOC_CONFIG_KEY = "autofac:ConfigLocation";
         private static string BUNDLE_CONFIG_KEY = "bundle:Optimizations";
@@ -51,6 +51,26 @@ namespace Isaac.App.Framework.Config
 
                 return false;
             }
+        }
+
+        /// <summary>
+        /// 设置IOC配置键值
+        /// </summary>
+        /// <param name="iocKey">IOC键值</param>
+        public static void SetIOCConfigKey(string iocKey)
+        {
+            if (string.IsNullOrEmpty(iocKey))
+                IOC_CONFIG_KEY = iocKey;
+        }
+
+        /// <summary>
+        /// 设置Bundle优化键值
+        /// </summary>
+        /// <param name="bundleKey">Bundle优化键值</param>
+        public static void SetBundleConfigKey(string bundleKey)
+        {
+            if (string.IsNullOrEmpty(bundleKey))
+                BUNDLE_CONFIG_KEY = bundleKey;
         }
 
     }

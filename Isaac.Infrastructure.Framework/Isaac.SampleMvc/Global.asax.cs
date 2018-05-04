@@ -26,22 +26,27 @@ namespace Isaac.SampleMvc
     {
         protected void Application_Start()
         {
+            //InfrastructureConfig.SetBundleConfigKey("");
+            //InfrastructureConfig.SetIOCConfigKey("");
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            BundleTable.EnableOptimizations = ConfigHelper.BUNDLE_OPTIMIZATIONS;
+            BundleTable.EnableOptimizations = InfrastructureConfig.BUNDLE_OPTIMIZATIONS;
 
             var builder = new ContainerBuilder();
 
-            // Service locator模式暂不启用
             var container = builder
-                .LoadCustomModule(ConfigHelper.IOC_CONFIG_FILE_LOCATION)
+                .LoadCustomModule(InfrastructureConfig.IOC_CONFIG_FILE_LOCATION)
                 .LoadMvcController(Assembly.GetExecutingAssembly())
-                .Build()
-                //.SetServiceLocator()
+                .Build();
+
+            // Service locator模式暂不启用
+            container
                 .SetDependencyResolver()
+                //.SetServiceLocator()
                 .GlobalInitialize();
 
             container.Resolve<ILog>().Information("The application has been successfully started!");

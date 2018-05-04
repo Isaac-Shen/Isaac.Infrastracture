@@ -160,7 +160,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Config\ConfigHelper.cs" />
+    <Compile Include="Config\InfrastructureConfig.cs" />
     <Compile Include="DataService\AbstractDapperDao.cs" />
     <Compile Include="DataService\AbstractDapperDatabase.cs" />
     <Compile Include="DataService\DataService.cs" />
