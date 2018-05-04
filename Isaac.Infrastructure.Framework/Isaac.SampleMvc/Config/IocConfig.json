@@ -1,10 +1,10 @@
 ﻿{
   "components": [
     {
-      "type": "Isaac.App.Framework.Utils.Logs.L4nLogger",
+      "type": "Isaac.App.Framework.Utils.Logs.L4nLogger, Isaac.App.Framework",
       "services": [
         {
-          "type": "Isaac.Infrastructure.Framework.Utils.ILog"
+          "type": "Isaac.Infrastructure.Framework.Utils.ILog, Isaac.Infrastructure.Framework"
         }
       ],
       "autoActivate": true,

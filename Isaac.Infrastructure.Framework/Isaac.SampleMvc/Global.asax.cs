@@ -43,8 +43,6 @@ namespace Isaac.SampleMvc
 
             RegisterModule(builder);
 
-            //builder.RegisterType<L4nLogger>().As<ILog>();
-
             var container = builder.Build();
 
             #region Set service locator
