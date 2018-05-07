@@ -65,6 +65,12 @@
     <Reference Include="CommonServiceLocator, Version=2.0.3.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonServiceLocator.2.0.3\lib\net45\CommonServiceLocator.dll</HintPath>
     </Reference>
+    <Reference Include="Dapper, Version=1.50.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.4\lib\net451\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="DapperExtensions, Version=1.6.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DapperExtensions.1.6.3\lib\net45\DapperExtensions.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.Client, Version=2.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.SignalR.Client.2.2.3\lib\net45\Microsoft.AspNet.SignalR.Client.dll</HintPath>
     </Reference>
@@ -258,7 +264,7 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
-    <Content Include="Config\IocConfig.json" />
+    <Content Include="Config\ioc_config.json" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -340,6 +346,10 @@
     <ProjectReference Include="..\Isaac.Infrastructure.Interfaces\Isaac.Infrastructure.Interfaces.csproj">
       <Project>{0593015b-b826-4fa8-b7b5-08531362faeb}</Project>
       <Name>Isaac.Infrastructure.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Isaac.SampleMvc.Dal\Isaac.SampleMvc.Dal.csproj">
+      <Project>{f109c9fb-5095-427a-9b6b-0e2ac7bc4b45}</Project>
+      <Name>Isaac.SampleMvc.Dal</Name>
     </ProjectReference>
     <ProjectReference Include="..\Isaac.SampleMvc.Dtos\Isaac.SampleMvc.Dtos.csproj">
       <Project>{98185e05-4b67-422c-9fe1-551a128768dd}</Project>

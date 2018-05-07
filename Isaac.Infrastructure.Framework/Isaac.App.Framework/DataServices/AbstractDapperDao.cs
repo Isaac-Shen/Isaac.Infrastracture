@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Isaac.App.Framework.DataService
+namespace Isaac.App.Framework.DataServices
 {
     public abstract class AbstractDapperDao<T> : IDataService<T>
         where T : class

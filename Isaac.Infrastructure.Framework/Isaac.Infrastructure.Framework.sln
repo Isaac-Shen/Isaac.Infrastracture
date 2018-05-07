@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isaac.SampleMvc.Models", "I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isaac.SampleMvc.Dtos", "Isaac.SampleMvc.Dtos\Isaac.SampleMvc.Dtos.csproj", "{98185E05-4B67-422C-9FE1-551A128768DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isaac.SampleMvc.Dal", "Isaac.SampleMvc.Dal\Isaac.SampleMvc.Dal.csproj", "{F109C9FB-5095-427A-9B6B-0E2AC7BC4B45}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{98185E05-4B67-422C-9FE1-551A128768DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98185E05-4B67-422C-9FE1-551A128768DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98185E05-4B67-422C-9FE1-551A128768DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F109C9FB-5095-427A-9B6B-0E2AC7BC4B45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F109C9FB-5095-427A-9B6B-0E2AC7BC4B45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F109C9FB-5095-427A-9B6B-0E2AC7BC4B45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F109C9FB-5095-427A-9B6B-0E2AC7BC4B45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +88,7 @@ Global
 		{096536DB-9018-4B6D-A361-AFF7D80CB840} = {5E94EB2E-FC27-4A1C-A2F7-EDB804EC73B3}
 		{0766B1EE-A186-47C3-BEFB-63088B6818ED} = {62309C33-6F3B-4CB8-9D60-5FAAFF8D9DB9}
 		{98185E05-4B67-422C-9FE1-551A128768DD} = {5280B3D2-7934-43F3-BB03-E308D46EB80E}
+		{F109C9FB-5095-427A-9B6B-0E2AC7BC4B45} = {BF171963-2175-4B35-A7D0-C42EA289ABD0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5044D659-3324-431D-97BE-26BF4EF270CD}

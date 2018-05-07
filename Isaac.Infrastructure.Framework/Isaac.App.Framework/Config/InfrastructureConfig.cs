@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Isaac.App.Framework.DataServices;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -50,6 +51,33 @@ namespace Isaac.App.Framework.Config
                 }
 
                 return false;
+            }
+        }
+
+        /// <summary>
+        /// 这里有问题
+        /// </summary>
+        public static List<DataService> DATABASE_CONNECTION
+        {
+            get
+            {
+                var result = new List<DataService>();
+                var connections =
+                    ConfigurationManager.ConnectionStrings
+                    .Cast<ConnectionStringSettings>()
+                    .Where(x => !x.Name.StartsWith("Local", StringComparison.OrdinalIgnoreCase));
+
+                if (connections != null && connections.Count() > 0)
+                {
+                    foreach (var connection in connections)
+                    {
+                        var service = new DataService(connection.Name, connection.ConnectionString, typeof(IsaacSampleDatabase));
+
+                        result.Add(service);
+                    }
+                }
+
+                return result;
             }
         }
 

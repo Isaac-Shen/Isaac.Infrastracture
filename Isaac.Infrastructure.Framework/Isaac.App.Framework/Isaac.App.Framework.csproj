@@ -161,9 +161,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\InfrastructureConfig.cs" />
-    <Compile Include="DataService\AbstractDapperDao.cs" />
-    <Compile Include="DataService\AbstractDapperDatabase.cs" />
-    <Compile Include="DataService\DataService.cs" />
+    <Compile Include="DataServices\AbstractDapperDao.cs" />
+    <Compile Include="DataServices\AbstractDapperDatabase.cs" />
+    <Compile Include="DataServices\DataService.cs" />
+    <Compile Include="DataServices\IsaacSampleDatabase.cs" />
     <Compile Include="Patterns\Ioc\ContainerBuilderExtension.cs" />
     <Compile Include="Patterns\Ioc\ContainerExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

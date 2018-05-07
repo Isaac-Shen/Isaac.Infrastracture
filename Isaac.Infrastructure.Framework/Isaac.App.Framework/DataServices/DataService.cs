@@ -14,10 +14,17 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Isaac.App.Framework.DataService
+namespace Isaac.App.Framework.DataServices
 {
     public class DataService
     {
+        public enum DatabseType
+        {
+            SqlServer,
+            MySql,
+            Oracle
+        }
+
         public DataService(string name, string connStr, Type dataServiceType)
         {
             if (dataServiceType.IsSubclassOf(typeof(AbstractDapperDatabase)))
@@ -32,9 +39,9 @@ namespace Isaac.App.Framework.DataService
             }
         }
 
-        public string Name { get; }
-        public string ConnectionString { get; }
-        public Type DatabaseType { get; }
+        public string Name { get; set; }
+        public string ConnectionString { get; set; }
+        public Type DatabaseType { get; set; }
 
         public static void LoadSqlServerService(ContainerBuilder builder, List<DataService> services)
         {

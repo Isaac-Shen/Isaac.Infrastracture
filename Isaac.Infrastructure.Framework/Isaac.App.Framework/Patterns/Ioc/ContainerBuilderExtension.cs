@@ -3,6 +3,7 @@ using Autofac.Configuration;
 using Autofac.Extras.CommonServiceLocator;
 using Autofac.Integration.Mvc;
 using CommonServiceLocator;
+using Isaac.App.Framework.DataServices;
 using Isaac.Infrastructure.Framework.Patterns;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -51,11 +52,44 @@ namespace Isaac.App.Framework.Patterns.Ioc
         /// 加载Mvc控制器
         /// </summary>
         /// <param name="builder">容器构造器</param>
-        /// <param name="assembly">待加载程序集</param>
+        /// <param name="controllerAssembly">待加载控制器程序集</param>
         /// <returns>容器构造器</returns>
-        public static ContainerBuilder LoadMvcController(this ContainerBuilder builder, Assembly assembly)
+        public static ContainerBuilder LoadMvcController(this ContainerBuilder builder, Assembly controllerAssembly)
         {
-            builder.RegisterControllers(assembly);
+            builder.RegisterControllers(controllerAssembly);
+
+            return builder;
+        }
+
+        public static ContainerBuilder LoadDatabases(this ContainerBuilder builder, DataService.DatabseType type, List<DataService> services)
+        {
+            switch (type)
+            {
+                case DataService.DatabseType.SqlServer:
+                    DataService.LoadSqlServerService(builder, services);
+                    break;
+                case DataService.DatabseType.MySql:
+                    DataService.LoadMySqlService(builder, services);
+                    break;
+                case DataService.DatabseType.Oracle:
+                    DataService.LoadOracleService(builder, services);
+                    break;
+                default:
+                    throw new NotImplementedException();
+            }
+            return builder;
+        }
+
+        /// <summary>
+        /// 记载DAL数据访问层
+        /// </summary>
+        /// <param name="builder"></param>
+        /// <param name="daoAssembly">待加载DAO程序集</param>
+        /// <returns></returns>
+        public static ContainerBuilder LoadDaos(this ContainerBuilder builder, Assembly daoAssembly)
+        {
+            builder.RegisterAssemblyTypes(daoAssembly)
+                   .Where(t => t.Name.EndsWith("Dao"));
 
             return builder;
         }

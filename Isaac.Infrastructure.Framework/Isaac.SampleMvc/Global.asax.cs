@@ -4,6 +4,7 @@ using Autofac.Extras.CommonServiceLocator;
 using Autofac.Integration.Mvc;
 using CommonServiceLocator;
 using Isaac.App.Framework.Config;
+using Isaac.App.Framework.DataServices;
 using Isaac.App.Framework.Patterns.Ioc;
 using Isaac.App.Framework.Utils.Logs;
 using Isaac.Infrastructure.Framework.Patterns;
@@ -39,7 +40,9 @@ namespace Isaac.SampleMvc
             var builder = new ContainerBuilder();
 
             var container = builder
+                .LoadDatabases(DataService.DatabseType.MySql, InfrastructureConfig.DATABASE_CONNECTION)
                 .LoadCustomModule(InfrastructureConfig.IOC_CONFIG_FILE_LOCATION)
+                .LoadDaos(Assembly.Load("Isaac.SampleMvc.Dal"))
                 .LoadMvcController(Assembly.GetExecutingAssembly())
                 .Build()
                 .SetServiceLocator()

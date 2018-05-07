@@ -1,4 +1,5 @@
 ﻿using Isaac.Infrastructure.Framework.Utils;
+using Isaac.SampleMvc.Dal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +13,12 @@ namespace Isaac.SampleMvc.Controllers
     /// </summary>
     public class WorkReportController : AdminController
     {
-        public WorkReportController(ILog logger)
+        private readonly WorkReportDao _workReportDao;
+
+        public WorkReportController(ILog logger, WorkReportDao workReportDao)
             : base(logger)
         {
+            _workReportDao = workReportDao;
         }
 
         /// <summary>
@@ -38,7 +42,7 @@ namespace Isaac.SampleMvc.Controllers
         }
 
         /// <summary>
-        /// 指定人员的报告列表
+        /// 我的报告列表
         /// </summary>
         /// <param name="pageNum">第几页</param>
         /// <param name="pageLoads">每页承载数量</param>
