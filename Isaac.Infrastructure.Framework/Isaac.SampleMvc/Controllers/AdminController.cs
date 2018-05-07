@@ -2,6 +2,7 @@
 using Isaac.App.Framework.Utils.Logs;
 using Isaac.Infrastructure.Framework.Patterns;
 using Isaac.Infrastructure.Framework.Utils;
+using Isaac.SampleMvc.Dal.Daos;
 using Isaac.SampleMvc.Dtos;
 using Newtonsoft.Json;
 using System;
@@ -19,10 +20,17 @@ namespace Isaac.SampleMvc.Controllers
     /// </summary>
     public class AdminController : Controller
     {
-        public AdminController(ILog logger)
+        private readonly AuthDao _authDao;
+
+        public AdminController(ILog logger, AuthDao auth = null)
             :base()
         {
             _logger = logger;
+
+            if (auth == null)
+                _authDao = GlobalHandle<ILifetimeScope>.GetCurrentRef().Resolve<AuthDao>();
+            else
+                _authDao = auth;
         }
         
         protected override void Initialize(RequestContext requestContext)
@@ -56,11 +64,11 @@ namespace Isaac.SampleMvc.Controllers
                 GetUserData<UserAuth>(filterContext.HttpContext.User.Identity as FormsIdentity);
             if (userData != null)
             {
-                ViewBag.Menus = userData.AuthActions;
+                ViewBag.Menus = userData.UserActions;
             }
             else
             {
-                ViewBag.Menu = new List<AuthAction>();
+                ViewBag.Menu = new List<UserAction>();
             }
 
             base.OnActionExecuting(filterContext);

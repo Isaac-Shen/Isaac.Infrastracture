@@ -14,51 +14,51 @@ namespace Isaac.SampleMvc.Models
         /// <summary>
         /// 报告编号
         /// </summary>
-        public int Id;
+        public int report_id;
 
         /// <summary>
         /// 主标题
         /// </summary>
-        public string MainTitle { get; set; }
+        public string main_title { get; set; }
 
         /// <summary>
         /// 副标题
         /// </summary>
-        public string SubTitle { get; set; }
+        public string sub_title { get; set; }
 
         /// <summary>
         /// 内容(分标题)
         /// </summary>
-        public string Content { get; set; }
+        public string content { get; set; }
 
         /// <summary>
         /// 作者工号
         /// </summary>
-        public int AuthorWorkId { get; set; }
+        public int author_id { get; set; }
 
         /// <summary>
         /// 作者名称
         /// </summary>
-        public string AuthorName { get; set; }
+        public string author_name { get; set; }
 
         /// <summary>
         /// 创建时间
         /// </summary>
-        public DateTime CreateTime { get; set; }
+        public DateTime create_time { get; set; }
 
         /// <summary>
         /// 最新更新时间
         /// </summary>
-        public DateTime LastUpdateTime { get; set; }
+        public DateTime last_updated_time { get; set; }
 
         /// <summary>
         /// 报告频率
         /// </summary>
-        public Frequency ReportFrequency { get; set; }
+        public Frequency frequency { get; set; }
 
         /// <summary>
         /// 是否包含附件
         /// </summary>
-        public bool HasAttachment { get; set; }
+        public bool has_attachment { get; set; }
     }
 }

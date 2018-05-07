@@ -1,5 +1,6 @@
 ﻿using Isaac.Infrastructure.Framework.Utils;
 using Isaac.SampleMvc.Dal;
+using Isaac.SampleMvc.Dal.Daos;
 using System;
 using System.Collections.Generic;
 using System.Linq;

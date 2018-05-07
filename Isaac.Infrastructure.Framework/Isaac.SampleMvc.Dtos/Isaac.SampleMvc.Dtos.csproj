@@ -40,8 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthAction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserAction.cs" />
     <Compile Include="UserAuth.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

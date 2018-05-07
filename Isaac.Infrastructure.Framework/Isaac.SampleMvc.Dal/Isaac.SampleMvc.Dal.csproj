@@ -49,9 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dao\CommonDao.cs" />
+    <Compile Include="Daos\AuthDao.cs" />
+    <Compile Include="Daos\CommonDao.cs" />
+    <Compile Include="Daos\StaffDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Dao\WorkReportDao.cs" />
+    <Compile Include="Daos\WorkReportDao.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Isaac.App.Framework\Isaac.App.Framework.csproj">
@@ -79,8 +81,6 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Databases\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

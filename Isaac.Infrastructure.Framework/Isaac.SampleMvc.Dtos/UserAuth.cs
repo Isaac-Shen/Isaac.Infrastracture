@@ -8,8 +8,10 @@ namespace Isaac.SampleMvc.Dtos
 {
     public class UserAuth
     {
-        public int WorkId { get; set; }
+        public int UserId { get; set; }
 
-        public List<AuthAction> AuthActions { get; set; }
+        public string UserName { get; set; }
+
+        public List<UserAction> UserActions { get; set; }
     }
 }

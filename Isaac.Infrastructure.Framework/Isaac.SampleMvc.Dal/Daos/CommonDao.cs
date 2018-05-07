@@ -20,5 +20,15 @@ namespace Isaac.SampleMvc.Dal
                 return GlobalHandle<ILifetimeScope>.GetCurrentRef().Resolve<IsaacSampleDatabase>();
             }
         }
+
+        protected string MySqlPagination(string sql, int pageNum, int pageLoad)
+        {
+            if (pageNum * pageLoad != 0)
+            {
+                return string.Format("{2} limit {0},{1}", pageNum * (pageLoad - 1), pageNum, sql);
+            }
+
+            return sql;
+        }
     }
 }

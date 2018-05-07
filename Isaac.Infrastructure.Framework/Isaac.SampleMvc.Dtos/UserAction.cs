@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Isaac.SampleMvc.Dtos
 {
-    public class AuthAction
+    public class UserAction
     {
-        public int ActionId;
+        public string ActionName { get; set; }
 
-        public string ActionUrl;
+        public string ActionUrl { get; set; }
     }
 }
