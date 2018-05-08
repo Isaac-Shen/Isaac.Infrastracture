@@ -61,6 +61,13 @@ namespace Isaac.App.Framework.Patterns.Ioc
             return builder;
         }
 
+        /// <summary>
+        /// 加载数据库模块
+        /// </summary>
+        /// <param name="builder"></param>
+        /// <param name="type"></param>
+        /// <param name="services"></param>
+        /// <returns></returns>
         public static ContainerBuilder LoadDatabases(this ContainerBuilder builder, DataService.DatabseType type, List<DataService> services)
         {
             switch (type)
