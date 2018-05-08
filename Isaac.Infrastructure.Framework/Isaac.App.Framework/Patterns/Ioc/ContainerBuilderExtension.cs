@@ -78,9 +78,9 @@ namespace Isaac.App.Framework.Patterns.Ioc
                 case DataService.DatabseType.MySql:
                     DataService.LoadMySqlService(builder, services);
                     break;
-                case DataService.DatabseType.Oracle:
-                    DataService.LoadOracleService(builder, services);
-                    break;
+                //case DataService.DatabseType.Oracle:
+                //    DataService.LoadOracleService(builder, services);
+                //    break;
                 default:
                     throw new NotImplementedException();
             }
