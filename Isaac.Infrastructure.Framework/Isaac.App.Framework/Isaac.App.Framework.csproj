@@ -175,6 +175,7 @@
     <Compile Include="Utils\Caches\Redis\RedisSortedSet.cs" />
     <Compile Include="Utils\Caches\Redis\RedisString.cs" />
     <Compile Include="Utils\Logs\L4nLogger.cs" />
+    <Compile Include="Utils\Mapper\ObjectMapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

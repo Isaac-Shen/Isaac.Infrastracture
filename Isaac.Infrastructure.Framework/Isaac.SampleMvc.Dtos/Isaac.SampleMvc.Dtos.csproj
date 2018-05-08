@@ -44,5 +44,8 @@
     <Compile Include="UserAction.cs" />
     <Compile Include="UserAuth.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MapperProfiles\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

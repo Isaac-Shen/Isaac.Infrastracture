@@ -7,6 +7,7 @@ using Isaac.App.Framework.Config;
 using Isaac.App.Framework.DataServices;
 using Isaac.App.Framework.Patterns.Ioc;
 using Isaac.App.Framework.Utils.Logs;
+using Isaac.App.Framework.Utils.Mapper;
 using Isaac.Infrastructure.Framework.Patterns;
 using Isaac.Infrastructure.Framework.Utils;
 using Microsoft.Extensions.Configuration;
@@ -35,10 +36,11 @@ namespace Isaac.SampleMvc
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
+            // Bundle optimization switch
             BundleTable.EnableOptimizations = InfrastructureConfig.BUNDLE_OPTIMIZATIONS;
 
+            // Build components
             var builder = new ContainerBuilder();
-
             var container = builder
                 .LoadDatabases(DataService.DatabseType.MySql, InfrastructureConfig.DATABASE_CONNECTION)
                 .LoadCustomModule(InfrastructureConfig.IOC_CONFIG_FILE_LOCATION)
@@ -49,6 +51,10 @@ namespace Isaac.SampleMvc
                 .SetDependencyResolver()
                 .GlobalInitialize();
 
+            // Load mapper
+            ObjectMapper.LoadMapperProfile(Assembly.Load("Isaac.SampleMvc.Dtos"));
+
+            // Initialize done record
             container.Resolve<ILog>().Information("The application has been successfully started!");
         }
 
