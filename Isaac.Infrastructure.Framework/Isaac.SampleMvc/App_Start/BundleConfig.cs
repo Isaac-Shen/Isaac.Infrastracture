@@ -27,6 +27,11 @@ namespace Isaac.SampleMvc
                       "~/Content/bootstrap.css",
                       "~/Content/font-awesome.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/loginCss").Include(
+                      "~/Content/bootstrap.css",
+                      "~/Content/font-awesome.css",
+                      "~/Content/login.css"));
         }
     }
 }

@@ -18,15 +18,13 @@ namespace Isaac.SampleMvc.Controllers
     /// <summary>
     /// 管理控制器基类
     /// </summary>
-    public class AdminController : Controller
+    public class AdminController : AbstractController
     {
         private readonly AuthDao _authDao;
 
         public AdminController(ILog logger, AuthDao auth = null)
-            :base()
+            :base(logger)
         {
-            _logger = logger;
-
             if (auth == null)
                 _authDao = GlobalHandle<ILifetimeScope>.GetCurrentRef().Resolve<AuthDao>();
             else
