@@ -35,10 +35,6 @@ namespace Isaac.SampleMvc.Controllers
         {
             base.Initialize(requestContext);
 
-            //if (requestContext.HttpContext.Request.IsAjaxRequest())
-            //{
-            //}
-
             if (requestContext.HttpContext.User.Identity.IsAuthenticated)
             {
                 if (requestContext.HttpContext.User.Identity is FormsIdentity)

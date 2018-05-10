@@ -32,22 +32,36 @@ namespace Isaac.SampleMvc.Dal.Daos
 
         public bool ValidatePhonePass(string phoneNumber, string password)
         {
-            var result =
-                Database.Connection.ExecuteScalar<bool>(
-                    string.Format("select @Pass = (select pass from per_staff_pass where phone_number = @PhoneNumber)"),
-                    new { PhoneNumber = phoneNumber, Pass = password });
+            try
+            {
+                var result =
+                    Database.Connection.ExecuteScalar<bool>(
+                        string.Format("select @Pass = (select pass from per_staff_pass where phone_number = @PhoneNumber)"),
+                        new { PhoneNumber = phoneNumber, Pass = password });
 
-            return result;
+                return result;
+            }
+            catch (Exception exp)
+            {
+                return false;
+            }
         }
 
         public bool ValidatePass(int staffId, string password)
         {
-            var result =
-                Database.Connection.ExecuteScalar<bool>(
-                    string.Format("select @Pass = (select pass from per_staff_pass where staff_id = @Id)"),
-                    new { Id = staffId, Pass = password });
+            try
+            {
+                var result =
+                    Database.Connection.ExecuteScalar<bool>(
+                        string.Format("select @Pass = (select pass from per_staff_pass where staff_id = @Id)"),
+                        new { Id = staffId, Pass = password });
 
-            return result;
+                return result;
+            }
+            catch (Exception exp)
+            {
+                return false;
+            }
         }
     }
 }

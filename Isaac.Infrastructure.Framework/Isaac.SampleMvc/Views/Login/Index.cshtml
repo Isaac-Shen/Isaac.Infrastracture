@@ -25,10 +25,13 @@
                 </label>
             </div>
             <button class="btn btn-lg btn-primary btn-block" id="button-login">登入</button>
-            <p class="mt-5 mb-3 text-muted">&copy; @DateTime.Now.Year</p>
+            <div class="errorMsg text-center alert alert-danger" style="display:none">
+                <span></span>
+            </div>
         </form>
 
         @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/login")
         @Scripts.Render("~/bundles/bootstrap")
     </body>
 </html>
