@@ -34,19 +34,21 @@ namespace Isaac.SampleMvc.Controllers
         protected override void Initialize(RequestContext requestContext)
         {
             base.Initialize(requestContext);
-            if (requestContext.HttpContext.Request.IsAjaxRequest())
+
+            //if (requestContext.HttpContext.Request.IsAjaxRequest())
+            //{
+            //}
+
+            if (requestContext.HttpContext.User.Identity.IsAuthenticated)
             {
-                if (requestContext.HttpContext.User.Identity.IsAuthenticated)
+                if (requestContext.HttpContext.User.Identity is FormsIdentity)
                 {
-                    if (requestContext.HttpContext.User.Identity is FormsIdentity)
-                    {
-                        var userAuths = GetUserData<UserAuth>(requestContext.HttpContext.User.Identity as FormsIdentity);
-                    }
+                    var userAuths = GetUserData<UserAuth>(requestContext.HttpContext.User.Identity as FormsIdentity);
                 }
-                else
-                {
-                    // redirect
-                }
+            }
+            else
+            {
+                requestContext.HttpContext.Response.Redirect(FormsAuthentication.LoginUrl);
             }
         }
 
