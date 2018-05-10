@@ -23,17 +23,27 @@ namespace Isaac.SampleMvc
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/popper").Include(
+                      "~/Scripts/umd/popper.js",
+                      "~/Scripts/umd/popper-utils.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/tooltip").Include(
+                      "~/Scripts/umd/popper.js",
+                      "~/Scripts/tooltip.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/login").Include(
                       "~/Scripts/common/login/login.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/popper.css",
                       "~/Content/font-awesome.css",
                       "~/Content/site.css"));
 
             bundles.Add(new StyleBundle("~/Content/loginCss").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/font-awesome.css",
+                      "~/Content/popper.css",
                       "~/Content/login.css"));
         }
     }

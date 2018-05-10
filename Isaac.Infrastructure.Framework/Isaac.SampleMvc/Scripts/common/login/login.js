@@ -23,6 +23,20 @@
 });
 
 function showErrorMessage(message) {
-    $(".errorMsg").find("span").text(message);
-    $(".errorMsg").fadeIn("fast").delay(2000).fadeOut("slow");
+    var target = $('.myResult');
+    var popper = $('.isaac-popper');
+
+    popper.find("span").text(message);
+
+    var anotherPopper = new Popper(
+        target,
+        popper,
+        {
+            placement: 'bottom'
+        }
+    );
+    
+    popper.css("opacity", 1);
+    //$(".errorMsg").find("span").text(message);
+    //$(".errorMsg").fadeIn("fast").delay(2000).fadeOut("slow");
 }

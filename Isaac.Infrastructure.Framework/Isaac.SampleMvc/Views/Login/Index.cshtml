@@ -4,34 +4,41 @@
 
 <!doctype html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>@ViewBag.Title | IOA</title>
-        @Styles.Render("~/Content/loginCss")
-        @Scripts.Render("~/bundles/modernizr")
-    </head>
-    <body class="text-center">
-        <form class="form-signin">
-            <h1 class="h3 mb-3 font-weight-normal">请登录</h1>
-            <label for="inputEmail" class="sr-only">User name</label>
-            <input type="text" id="inputUserId" class="form-control" placeholder="用户名" required autofocus>
-            <label for="inputPassword" class="sr-only">Password</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="密码" required>
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" value="remember-me"> 保持登录状态
-                </label>
-            </div>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title | IOA</title>
+    @Styles.Render("~/Content/loginCss")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body class="login-container text-center">
+    <form class="form-signin">
+        <h1 class="h3 mb-3 font-weight-normal">请登录</h1>
+        <label for="inputEmail" class="sr-only">User name</label>
+        <input type="text" id="inputUserId" class="form-control" placeholder="用户名" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="密码" required>
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me"> 保持登录状态
+            </label>
+        </div>
+        <div class="myResult">
             <a class="btn btn-lg btn-primary btn-block" id="button-login">登入</a>
-            <div class="errorMsg text-center alert alert-danger" style="display:none">
-                <span></span>
-            </div>
-        </form>
+        </div>
+        <div class="isaac-popper popper" style="opacity:0">
+            <span></span>
+            <div class="popper__arrow" x-arrow="" style="top: 40px;"></div>
+        </div>
+        @*<div class="errorMsg text-center alert alert-danger" style="display:none">
+            <span></span>
+        </div>*@
+    </form>
 
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/login")
-        @Scripts.Render("~/bundles/bootstrap")
-    </body>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/login")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/tooltip")
+</body>
 </html>
